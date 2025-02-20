@@ -35,6 +35,7 @@ public class MedicoController {
 		
 		TblMedico tblmedico = new TblMedico();
 		modelo.addAttribute("regmedico", tblmedico);
+		modelo.addAttribute("titulo", "Registrar");
 		return "/Vistas/FrmRegMedico";
 	}
 	
@@ -51,6 +52,7 @@ public class MedicoController {
 		
 		TblMedico clmedico = imedicoservicio.buscarporId(imedico);
 		modelo.addAttribute("regmedico", clmedico);
+		modelo.addAttribute("titulo", "Editar");
 		return "/Vistas/FrmRegMedico";
 	}
 	

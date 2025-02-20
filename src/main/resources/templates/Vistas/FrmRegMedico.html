@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registrar Medico</title>
+</head>
+
+<body style="background-image: url(https://raw.githubusercontent.com/jaenfigueroa/bg/refs/heads/main/topography.svg);">
+
+	<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+
+		<div
+			class="sm:mx-auto sm:w-full sm:max-w-sm  block w-full rounded-md bg-white px-8 py-8 text-base outline-1 -outline-offset-1 outline-gray-400">
+
+			<h2 class="text-center text-4xl/9 font-bold tracking-tight text-gray-700" th:text="${titulo} + ' Medico'">
+				Registrar Medico
+			</h2>
+
+			<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+				<form class="space-y-6" th:action="@{/Vistas/GuardarMedico}" method="post" th:object="${regmedico}">
+					<div>
+						<input type="hidden" th:field="*{idmedicot3}">
+
+						<label for="nombret3" class="block text-sm/6 font-medium text-gray-900">Nombre:</label>
+						<div class="mt-2">
+							<input type="text" id="nombret3" th:field="*{nombret3}" required
+								class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-700 sm:text-sm/6">
+						</div>
+
+						<label for="apellidot3" class="block text-sm/6 font-medium text-gray-900">Apellido:</label>
+						<div class="mt-2">
+							<input type="text" id="apellidot3" th:field="*{apellidot3}" required
+								class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-700 sm:text-sm/6">
+						</div>
+
+						<label for="emailt3" class="block text-sm/6 font-medium text-gray-900">Email:</label>
+						<div class="mt-2">
+							<input type="email" id="emailt3" th:field="*{emailt3}" required
+								class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-700 sm:text-sm/6">
+						</div>
+						<label for="dnit3" class="block text-sm/6 font-medium text-gray-900">DNI:</label>
+						<div class="mt-2">
+							<input type="text" id="dnit3" th:field="*{dnit3}" required
+								class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-700 sm:text-sm/6">
+						</div>
+
+						<label for="estadocivilt3" class="block text-sm/6 font-medium text-gray-900">Estado
+							Civil:</label>
+						<div class="mt-2">
+							<input type="text" id="estadocivilt3" th:field="*{estadocivilt3}" required
+								class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-700 sm:text-sm/6">
+						</div>
+
+						<label for="fechanacimt3" class="block text-sm/6 font-medium text-gray-900">Fecha de
+							nacimiento:</label>
+						<div class="mt-2">
+							<input type="date" id="fechanacimt3" th:field="*{fechanacimt3}" required
+								class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-700 sm:text-sm/6">
+						</div>
+					</div>
+
+					<div class="flex gap-2">
+						<button type="submit"
+							class="flex w-50 justify-center rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
+							th:text="${titulo} == 'Editar' ? 'Actualizar' : 'Registrar'">
+							Registrar
+						</button>
+
+						<a href="/Vistas/ListadoMedicos"
+							class="flex w-50 justify-center rounded-md bg-rose-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-rose-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">Cancelar
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Tailwind -->
+	<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</body>
+
+</html>
